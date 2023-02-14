@@ -13,7 +13,13 @@ endDATE = df.index.max()
 
 pickStart = st.sidebar.date_input("Pick start date:",begDATE, min_value=begDATE)
 pickEnd = st.sidebar.date_input("Pick end date:",endDATE)
-st.write(df.loc[pickStart:pickEnd])
+filterDF = df.loc[pickStart:pickEnd]
+st.write(filterDF)
+
+import plotly.express as px
+fig = px.line(filterDF, x=filterDF.index, y="Close")
+st.plotly_chart(fig)
+
 
 st.write(begDATE)
 st.write(endDATE)
