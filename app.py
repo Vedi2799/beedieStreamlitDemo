@@ -11,7 +11,7 @@ df = pd.read_csv(ticker+".csv", parse_dates=['Date'], index_col=['Date'])
 begDATE = df.index.min()
 endDATE = df.index.max()
 
-pickStart = st.date_input("Pick start date:",begDATE)
+pickStart = st.date_input("Pick start date:",begDATE, min_value=begDATE)
 pickEnd = st.date_input("Pick end date:",endDATE)
 st.write(df.loc[pickStart:pickEnd])
 
