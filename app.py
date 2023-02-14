@@ -13,8 +13,7 @@ endDATE = df.index.max()
 
 pickStart = st.date_input("Pick start date:",begDATE)
 pickEnd = st.date_input("Pick end date:",endDATE)
-st.write(df)
-
+st.write(df.loc[pickStart:pickEnd])
 
 st.write(begDATE)
 st.write(endDATE)
